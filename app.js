@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('select').material_select();
+    $('#container-list').css("display", "none");
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -17,6 +18,7 @@ function changeEventHandler(event) {
 };
 
 function getInstagramImages(string) {
+  $('#container-list').css("display", "block");  
   var url = "https://www.instagram.com/explore/tags/" + selection + "/?__a=1";
   console.log(url);
   fetch(url)

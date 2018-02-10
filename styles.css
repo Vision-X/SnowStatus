@@ -76,6 +76,7 @@ li {
 .input-field {
   background-color: darkcyan;
   margin: auto;
+  margin-top: 2rem;
   padding: 0 1rem;
   width: 40vh;
 }
