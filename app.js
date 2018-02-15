@@ -57,9 +57,15 @@ function sortWeather(res) {
 
   for (var i = 0; i < resort.length; i++) {
     superObj.resortName = resort[i].resort_name;
-    superObj.threeDayTotal = (resort[i].pastSnow.sum3/2.54);
+    superObj.threeDayTotal = Math.round(resort[i].pastSnow.sum3/2.54);
+    superObj.lastDayTotal = Math.round(resort[i].pastSnow.snow0day/2.54);
     console.log(superObj);
-    weatherContainer.innerHTML = `<h2>`+superObj.resortName+`</h2`;
+    weatherContainer.innerHTML =
+    `<h2>${superObj.resortName}</h2>
+       <ul> Snowfall
+         <li> Last 72 Hrs: ${superObj.threeDayTotal} inches</li>
+         <li> Last 24 Hrs: ${superObj.lastDayTotal} inches<li>
+       </ul>`;
     //build HTML function
   }
 }
