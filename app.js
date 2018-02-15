@@ -13,7 +13,7 @@ var superObj = {};
 function changeEventHandler(event) {
   event.preventDefault();
   let selected = event.target.value;
-  selection = selected.toLowerCase().replace(/ /g,'');
+  selection = selected.toLowerCase().replace(/[ /]/g,'');
   let imageDump = document.querySelector('#container-list');
   imageDump.innerHTML = '';
   whatIsTheSelection(selection);
@@ -48,8 +48,6 @@ function getWeatherData(selection) {
 function sortWeather(res) {
   var weatherContainer = document.querySelector('.weather');
   peek(res);
-  var codeInsert = `<h2>{$superObj.resortName}</h2>`;
-  // console.log("sortWeather", res.rows);
   let ary = res.rows;
   let resort = ary.filter((row) => {
     return row['resort_name'].toLowerCase().replace(/ /g,'') == resortChosen
@@ -63,8 +61,8 @@ function sortWeather(res) {
     weatherContainer.innerHTML =
     `<h2>${superObj.resortName}</h2>
        <ul> Snowfall
-         <li> Last 72 Hrs: ${superObj.threeDayTotal} inches</li>
          <li> Last 24 Hrs: ${superObj.lastDayTotal} inches<li>
+         <li> Last 72 Hrs: ${superObj.threeDayTotal} inches</li>
        </ul>`;
     //build HTML function
   }
@@ -123,4 +121,5 @@ function sliderClassCheck() {
   slider.carousel({
       autoplay: true
   });
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
 };
