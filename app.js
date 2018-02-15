@@ -52,7 +52,7 @@ function sortWeather(res) {
   // console.log("sortWeather", res.rows);
   let ary = res.rows;
   let resort = ary.filter((row) => {
-    return row['resort_name_short'].toLowerCase().replace(/ /g,'') == resortChosen
+    return row['resort_name'].toLowerCase().replace(/ /g,'') == resortChosen
   });
 
   for (var i = 0; i < resort.length; i++) {
