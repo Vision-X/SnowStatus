@@ -16,41 +16,42 @@
       <h1><span id="header-style">Snow</span>Status</h1>
       <p>Check the weather and see the conditions at your favorite local resort!</p>
     </header>
-    <section id="drop-spot">
-      <div class="input-field">
-        <select>
-          <option value="" disabled selected>Choose a Resort</option>
-          <option value="Arapahoe Basin Ski Area">Arapahoe Basin</option>
-          <option value="Aspen/Snowmass">Aspen Snowmass</option>
-          <option value="Beaver Creek">Beaver Creek</option>
-          <option value="Breckenridge">Breckenridge</option>
-          <option value="Copper Mountain Resort">Copper Mountain</option>
-          <option value="Crested Butte Mountain Resort">Crested Butte</option>
-          <option value="Eldora Mountain Resort">Eldora</option>
-          <option value="Keystone">Keystone</option>
-          <option value="Loveland">Loveland</option>
-          <option value="Telluride">Telluride</option>
-          <option value="Purgatory">Purgatory</option>
-          <option value="Silverton Mountain">Silverton Mountain</option>
-          <option value="Steamboat">Steamboat</option>
-          <option value="Vail">Vail</option>
-          <option value="Winter Park Resort">Winter Park</option>
-          <option value="Wolf Creek Ski Area">Wolf Creek</option>
-        </select>
-      </div>
-    </section>
+    <main class="container col s12 m6">
+      <section id="drop-spot">
+        <div class="input-field">
+          <select>
+            <option value="" disabled selected>Choose a Resort</option>
+            <option value="Arapahoe Basin Ski Area">Arapahoe Basin</option>
+            <option value="Aspen/Snowmass">Aspen Snowmass</option>
+            <option value="Beaver Creek">Beaver Creek</option>
+            <option value="Breckenridge">Breckenridge</option>
+            <option value="Copper Mountain Resort">Copper Mountain</option>
+            <option value="Crested Butte Mountain Resort">Crested Butte</option>
+            <option value="Eldora Mountain Resort">Eldora</option>
+            <option value="Keystone">Keystone</option>
+            <option value="Loveland">Loveland</option>
+            <option value="Telluride">Telluride</option>
+            <option value="Purgatory">Purgatory</option>
+            <option value="Silverton Mountain">Silverton Mountain</option>
+            <option value="Steamboat">Steamboat</option>
+            <option value="Vail">Vail</option>
+            <option value="Winter Park Resort">Winter Park</option>
+            <option value="Wolf Creek Ski Area">Wolf Creek</option>
+          </select>
+        </div>
+      </section>
 
-    <section id="drop-spot2">
-      <div id="container-list" class="carousel" autoplay="true" fullWidth="false"></div>
-    </section>
+      <section id="drop-spot2">
+        <div id="container-list" class="carousel responsive-img" autoplay="true" fullWidth="false"></div>
+      </section>
 
-    <section id="main">
-      <div class="weather">
-      </div>
-    </section>
+      <section id="main">
+        <div class="weather">
+        </div>
+      </section>
+    </main>
   </body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script> -->
   <script type="text/javascript" src="app.js"></script>
 </html>
