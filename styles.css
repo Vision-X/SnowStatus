@@ -7,8 +7,10 @@
 }
 
 body {
-  background-color: darkgray;
+  background-color: #00243D;
+  /*color: #717171;*/
   height: 50vh;
+  font-family: 'Exo 2', sans-serif;
 }
 
 header {
@@ -18,23 +20,23 @@ header {
 }
 
 h1 {
-  color: darkcyan;
+  color: #00A938;
+  font-family: 'Audiowide', cursive;
+  /*font-family: 'Rock Salt', cursive;*/
 }
 
-p {
-  color: gray;
+#header-style {
+  color: white;
+}
+
+header p {
+  color: #717171;
 }
 
 h1, p {
   margin: auto;
   padding-top: .3rem;
   text-align: center;
-  /*max-width: 50vw;*/
-}
-
-img {
-  /*max-height: 400px;*/
-  /*max-width:*/
 }
 
 nav {
@@ -45,27 +47,38 @@ nav {
   line-height: 0;
 }
 
+ul.dropdown-content {
+  background-color: #2A2A2A;
+}
+
 li {
   padding: .1rem !important;
 }
 
-/*MATERIALIZE OVERRIDES HERE*/
-
-.chip {
-  background-color: darkcyan;
-  color: white;
+.weather h2 {
   text-align: center;
-  width: 200px;
 }
 
-.weather {
+/*MATERIALIZE OVERRIDES HERE*/
+
+
+ul.dropdown-content.select-dropdown li span {
+  color: #2A2A2A;
+  background-color: #00A938;
+
+}
+
+.weather-flex {
+  color: #717171;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
 }
 
 .carousel {
   margin-top: 2rem !important;
   max-height: 70vh !important;
-  max-width: 80%;
+  /*max-width: 80%;*/
 }
 
 .carousel .carousel-item {
@@ -74,7 +87,7 @@ li {
 }
 
 .input-field {
-  background-color: darkcyan;
+  background-color: #00A938;
   margin: auto;
   margin-top: 2rem;
   padding: 0 1rem;

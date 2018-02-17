@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $('select').material_select();
     $('#container-list').css("display", "none");
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -60,10 +61,12 @@ function sortWeather(res) {
     console.log(superObj);
     weatherContainer.innerHTML =
     `<h2>${superObj.resortName}</h2>
-       <ul> Snowfall
-         <li> Last 24 Hrs: ${superObj.lastDayTotal} inches<li>
-         <li> Last 72 Hrs: ${superObj.threeDayTotal} inches</li>
-       </ul>`;
+      <div class="weather-flex">
+        <ul> Snowfall
+          <li> Last 24 Hrs: ${superObj.lastDayTotal} inches<li>
+          <li> Last 72 Hrs: ${superObj.threeDayTotal} inches</li>
+        </ul>
+      </div>`;
     //build HTML function
   }
 }
