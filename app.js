@@ -65,8 +65,8 @@ function sortWeather(res) {
     `<h2>${superObj.resortName}</h2>
       <div class="weather-flex">
         <ul> Snowfall
-          <li> Last 24 Hrs: ${superObj.lastDayTotal} inches<li>
-          <li> Last 72 Hrs: ${superObj.threeDayTotal} inches</li>
+          <li> 24 Hrs: ${superObj.lastDayTotal} inches<li>
+          <li> 72 Hrs: ${superObj.threeDayTotal} inches</li>
         </ul>
         <ul> Lifts
           <li> Open: ${superObj.liftNum} / ${superObj.liftTotal} </li>

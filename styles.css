@@ -8,7 +8,6 @@
 
 body {
   background-color: #00243D;
-  /*color: #717171;*/
   height: 50vh;
   font-family: 'Exo 2', sans-serif;
 }
@@ -22,15 +21,14 @@ header {
 h1 {
   color: #00A938;
   font-family: 'Audiowide', cursive;
-  /*font-family: 'Rock Salt', cursive;*/
-}
-
-#header-style {
-  color: white;
 }
 
 header p {
   color: #717171;
+}
+
+#header-style {
+  color: white;
 }
 
 h1, p {
@@ -55,17 +53,19 @@ li {
   padding: .1rem !important;
 }
 
+.weather {
+  height: 25vh;
+}
+
 .weather h2 {
   text-align: center;
 }
 
 /*MATERIALIZE OVERRIDES HERE*/
 
-
 ul.dropdown-content.select-dropdown li span {
-  color: #2A2A2A;
   background-color: #00A938;
-
+  color: #2A2A2A;
 }
 
 .weather-flex {
@@ -76,14 +76,18 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 .carousel {
-  margin-top: 2rem !important;
-  max-height: 70vh !important;
-  /*max-width: 80%;*/
+  height: 400px !important;
+  perspective: 800px !important;
 }
 
+/*.carousel-slider {
+  width: 100% !important;
+  max-height: 60vh !important;
+}*/
+
 .carousel .carousel-item {
-  height: 60vh !important;
-  width: 40vw !important;
+  max-height: 60vh !important;
+  width: 33.3333% !important;
 }
 
 .input-field {
@@ -96,4 +100,46 @@ ul.dropdown-content.select-dropdown li span {
 
 .select-wrapper input.select-dropdown {
   border-bottom: none !important;
+}
+
+
+@media only screen and (max-width: 965px) {
+  /*:root {
+    font-size: 1.2rem;
+  }*/
+}
+
+@media only screen and (max-width: 560px) {
+
+  /*:root {
+    font-size: 4rem;
+  }*/
+
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  header {
+    height: 15%;
+  }
+
+  h2 {
+    font-size: 2.0rem;
+  }
+
+  .dropdown-content li>a,
+  .dropdown-content li>span {
+    /*height: 2rem;*/
+    font-size: 24px !important;
+    line-height: 1.5rem !important;
+  }
+
+  .input-field select option {
+    font-size: 22px;
+  }
+
+  .weather {
+    height: 30%;
+  }
 }
