@@ -112,6 +112,42 @@ ul.dropdown-content.select-dropdown li span {
   border-bottom: none !important;
 }
 
+/*.carousel-item .active {
+  transform: translateX(479.672px)
+             translateY(50px)
+             translateX(0px)
+             translateX(0px)
+             translateZ(0px)
+             !important;
+}
+.carousel-item {
+    opacity:1;
+}
+ .carousel-item.active.right, .carousel-item.next {
+  left: 0;
+	-webkit-transition: opacity 0.7s ease-in-out;
+	-moz-transition: opacity 0.7s ease-in-out;
+	-ms-transition: opacity 0.7s ease-in-out;
+	-o-transition: opacity 0.7s ease-in-out;
+   transition: opacity 0.7s ease-in-out;
+	 opacity:0;
+   transform: translate3d(0, 0, 0);
+}
+.carousel-item.active.left, .carousel-item.prev {
+  left: 0;
+	-webkit-transition: opacity 0.7s ease-in-out;
+	-moz-transition: opacity 0.7s ease-in-out;
+	-ms-transition: opacity 0.7s ease-in-out;
+	-o-transition: opacity 0.7s ease-in-out;
+  transition: opacity 0.7s ease-in-out;
+	opacity:0;
+  transform: translate3d(0, 0, 0);
+}
+.carousel-item.active, .carousel-item.next.left,  .carousel-item.prev.right {
+    left: 0;
+   	opacity:1;
+}*/
+
 
 /*@media only screen and (max-width: 965px) {
   :root {
@@ -168,7 +204,7 @@ ul.dropdown-content.select-dropdown li span {
     /* Medium Devices, Desktops */
     @media only screen and (max-width : 992px) {
       :root {
-        font-size: 1.4rem;
+        font-size: 1.0rem;
       }
     }
 
@@ -176,7 +212,7 @@ ul.dropdown-content.select-dropdown li span {
     @media only screen and (max-width : 768px) {
 
       :root {
-        font-size: 1.2rem;
+        font-size: .9rem;
       }
     }
 
@@ -184,7 +220,7 @@ ul.dropdown-content.select-dropdown li span {
     @media only screen and (max-width : 480px) {
 
       :root {
-         font-size: 1rem;
+         font-size: .8rem;
        }
 
        body {
@@ -193,26 +229,41 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        header {
-         height: 25%;
+         height: 30%;
        }
 
-       /*header p {
-         font-size: 2rem;
-       }*/
+       header h1 {
+         font-size: 3rem !important;
+       }
 
-       h2 {
-         font-size: 2.0rem;
+       .weather h2 {
+         font-size: 1.4rem;
+         margin: 0;
        }
 
        .dropdown-content li>a,
        .dropdown-content li>span {
-         /*height: 2rem;*/
-         font-size: 24px !important;
-         line-height: 1.5rem !important;
+         font-size: 22px;
        }
 
-       .input-field select option {
+       .select-wrapper input.select-dropdown {
          font-size: 22px;
+       }
+
+       #container-list {
+         height: 320px !important;
+       }
+
+       .carousel-item.active img {
+         transform: translateX(-10px) translateY(-10px)
+                    translateX(0px)
+                    translateX(0px)
+                    translateZ(300px)
+                    !important;
+       }
+
+       .carousel .carousel-item>img {
+         width: 150%;
        }
 
        .weather {
@@ -220,11 +271,13 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        .weather-flex {
-         width: 80%;
+         width: 90%;
        }
     }
 
     /* Custom, iPhone Retina */
     @media only screen and (max-width : 320px) {
-
+      h1 {
+        font-size: 3rem;
+      }
     }
