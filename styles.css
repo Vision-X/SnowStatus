@@ -1,6 +1,6 @@
-:root {
-  font-size: 1rem;
-}
+/*:root {
+  font-size: 1.5rem;
+}*/
 
 * {
   margin: 0 auto;
@@ -8,29 +8,27 @@
 
 body {
   background-color: #00243D;
-  /*color: #717171;*/
-  height: 50vh;
+  max-height: 50vh;
   font-family: 'Exo 2', sans-serif;
 }
 
 header {
   background-color: black;
-  height: 8rem;
+  height: 20%;
   width: 100%;
 }
 
 h1 {
   color: #00A938;
   font-family: 'Audiowide', cursive;
-  /*font-family: 'Rock Salt', cursive;*/
-}
-
-#header-style {
-  color: white;
 }
 
 header p {
   color: #717171;
+}
+
+#header-style {
+  color: white;
 }
 
 h1, p {
@@ -43,8 +41,12 @@ nav {
   background-color: gray;
   display: flex;
   height: auto;
-  justify-content: center;
+  justify-content: space-around;
   line-height: 0;
+}
+
+ul h3 {
+  font-size: 1.6rem;
 }
 
 ul.dropdown-content {
@@ -55,35 +57,43 @@ li {
   padding: .1rem !important;
 }
 
+.weather {
+  height: 25vh;
+}
+
 .weather h2 {
+  color: white;
+  font-size: 3rem;
   text-align: center;
 }
 
 /*MATERIALIZE OVERRIDES HERE*/
 
-
 ul.dropdown-content.select-dropdown li span {
-  color: #2A2A2A;
   background-color: #00A938;
-
+  color: #2A2A2A;
 }
 
 .weather-flex {
   color: #717171;
   display: flex;
-  justify-content: space-between;
   text-align: center;
+  width: 50%;
 }
 
 .carousel {
-  margin-top: 2rem !important;
-  max-height: 70vh !important;
-  /*max-width: 80%;*/
+  height: 400px !important;
+  perspective: 800px !important;
 }
 
+/*.carousel-slider {
+  width: 100% !important;
+  max-height: 60vh !important;
+}*/
+
 .carousel .carousel-item {
-  height: 60vh !important;
-  width: 40vw !important;
+  max-height: 60vh !important;
+  width: 33.3333% !important;
 }
 
 .input-field {
@@ -96,4 +106,54 @@ ul.dropdown-content.select-dropdown li span {
 
 .select-wrapper input.select-dropdown {
   border-bottom: none !important;
+}
+
+
+@media only screen and (max-width: 965px) {
+  :root {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+
+ :root {
+    font-size: 1rem;
+  }
+
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  header {
+    height: 25%;
+  }
+
+  /*header p {
+    font-size: 2rem;
+  }*/
+
+  h2 {
+    font-size: 2.0rem;
+  }
+
+  .dropdown-content li>a,
+  .dropdown-content li>span {
+    /*height: 2rem;*/
+    font-size: 24px !important;
+    line-height: 1.5rem !important;
+  }
+
+  .input-field select option {
+    font-size: 22px;
+  }
+
+  .weather {
+    height: 30%;
+  }
+
+  .weather-flex {
+    width: 80%;
+  }
 }

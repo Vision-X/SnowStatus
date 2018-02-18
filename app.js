@@ -13,9 +13,9 @@ var superObj = {};
 
 function changeEventHandler(event) {
   event.preventDefault();
-  let selected = event.target.value;
-  selection = selected.toLowerCase().replace(/[ /]/g,'');
   let imageDump = document.querySelector('#container-list');
+  let selected = event.target.value;
+  selection = selected.toLowerCase().replace(/ /g,'');
   imageDump.innerHTML = '';
   whatIsTheSelection(selection);
   getWeatherData(selection);
@@ -24,8 +24,11 @@ function changeEventHandler(event) {
 
 function getInstagramImages(string) {
   $('#container-list').css("display", "block");
-  var url = "https://www.instagram.com/explore/tags/" + selection + "/?__a=1";
-  // console.log(url);
+  if (selection == "aspen/snowmass") {
+    var url = "https://www.instagram.com/explore/tags/aspensnowmass/?__a=1";
+  } else {
+    var url = "https://www.instagram.com/explore/tags/" + selection + "/?__a=1";
+  }
   fetch(url)
     .then(res => res.json())
     .then(buildEls)
@@ -41,9 +44,9 @@ function getWeatherData(selection) {
   let snowUrl = 'https://skiapp.onthesnow.com/app/widgets/resortlist?region=us&regionids=251&language=en&pagetype=skireport&direction=+1'
   fetch(snowUrl)
     .then(res => res.json())
-    // .then(peek)
     .then(sortWeather)
     // .then(buildWeather)
+    .catch()
 }
 
 function sortWeather(res) {
@@ -60,15 +63,20 @@ function sortWeather(res) {
     superObj.lastDayTotal = Math.round(resort[i].pastSnow.snow0day/2.54);
     superObj.liftNum = resort[i].snowcone.lifts_open;
     superObj.liftTotal = resort[i].resortProfile.num_lifts;
+    superObj.baseDepth = Math.round(resort[i].snowcone.base_depth_cm/2.54);
+    superObj.topDepth = Math.round(resort[i].snowcone.top_depth_cm/2.54);
     console.log(superObj);
     weatherContainer.innerHTML =
     `<h2>${superObj.resortName}</h2>
       <div class="weather-flex">
-        <ul> Snowfall
-          <li> Last 24 Hrs: ${superObj.lastDayTotal} inches<li>
-          <li> Last 72 Hrs: ${superObj.threeDayTotal} inches</li>
+        <ul> <h3>Snowfall</h3>
+          <li> 24 Hrs: ${superObj.lastDayTotal} "<li>
+          <li> 72 Hrs: ${superObj.threeDayTotal} "</li>
         </ul>
-        <ul> Lifts
+        <ul> <h3>Lower/Upper</h3>
+          <li> ${superObj.baseDepth} " - ${superObj.topDepth}" </li>
+        </ul>
+        <ul> <h3>Lifts</h3>
           <li> Open: ${superObj.liftNum} / ${superObj.liftTotal} </li>
         </ul>
       </div>`;
@@ -90,7 +98,7 @@ function peek(res) {
   // console.log(selection);
   //builds a loop that prints out all the resort names
   for (var i = 0; i < res.rows.length; i++) {
-    let resort = res.rows[i].resort_name_short.toLowerCase().replace(/ /g,'');;
+    let resort = res.rows[i].resort_name_short.toLowerCase().replace(/ /g,'');
     console.log(resort);
   }
   // stretch: map/filter or FOR IN to make new obj of what I care about/reduce
