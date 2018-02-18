@@ -1,6 +1,6 @@
-/*:root {
-  font-size: 1.5rem;
-}*/
+:root {
+  font-size: 1rem;
+}
 
 * {
   margin: 0 auto;
@@ -37,20 +37,22 @@ h1, p {
   text-align: center;
 }
 
-nav {
+/*nav {
   background-color: gray;
   display: flex;
   height: auto;
   justify-content: space-around;
   line-height: 0;
-}
+}*/
 
 ul h3 {
   font-size: 1.6rem;
 }
 
 ul.dropdown-content {
-  background-color: #2A2A2A;
+  /*background-color: #2A2A2A;*/
+  /*background-color: white;*/
+  background-color: gray;
 }
 
 li {
@@ -70,7 +72,8 @@ li {
 /*MATERIALIZE OVERRIDES HERE*/
 
 ul.dropdown-content.select-dropdown li span {
-  background-color: #00A938;
+  /*background-color: #00A938;*/
+  background-color: gray;
   color: #2A2A2A;
 }
 
@@ -97,7 +100,8 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 .input-field {
-  background-color: #00A938;
+  /*background-color: #00A938;*/
+  background-color: gray;
   margin: auto;
   margin-top: 2rem;
   padding: 0 1rem;
@@ -109,13 +113,13 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 
-@media only screen and (max-width: 965px) {
+/*@media only screen and (max-width: 965px) {
   :root {
     font-size: 1.2rem;
   }
-}
+}*/
 
-@media only screen and (max-width: 560px) {
+/*@media only screen and (max-width: 560px) {
 
  :root {
     font-size: 1rem;
@@ -130,17 +134,12 @@ ul.dropdown-content.select-dropdown li span {
     height: 25%;
   }
 
-  /*header p {
-    font-size: 2rem;
-  }*/
-
   h2 {
     font-size: 2.0rem;
   }
 
   .dropdown-content li>a,
   .dropdown-content li>span {
-    /*height: 2rem;*/
     font-size: 24px !important;
     line-height: 1.5rem !important;
   }
@@ -156,4 +155,76 @@ ul.dropdown-content.select-dropdown li span {
   .weather-flex {
     width: 80%;
   }
-}
+}*/
+
+
+    /*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+      :root {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+
+      :root {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (max-width : 480px) {
+
+      :root {
+         font-size: 1rem;
+       }
+
+       body {
+         height: 100vh;
+         width: 100vw;
+       }
+
+       header {
+         height: 25%;
+       }
+
+       /*header p {
+         font-size: 2rem;
+       }*/
+
+       h2 {
+         font-size: 2.0rem;
+       }
+
+       .dropdown-content li>a,
+       .dropdown-content li>span {
+         /*height: 2rem;*/
+         font-size: 24px !important;
+         line-height: 1.5rem !important;
+       }
+
+       .input-field select option {
+         font-size: 22px;
+       }
+
+       .weather {
+         height: 30%;
+       }
+
+       .weather-flex {
+         width: 80%;
+       }
+    }
+
+    /* Custom, iPhone Retina */
+    @media only screen and (max-width : 320px) {
+
+    }
