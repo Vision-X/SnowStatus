@@ -1,7 +1,7 @@
 $(document).ready(function() {
+    $('.modal').modal();
     $('select').material_select();
     $('#container-list').css("display", "none");
-    // $('.carousel.carousel-slider').carousel({fullWidth: true});
     $('.slider').slider();
 });
 
@@ -18,7 +18,6 @@ function changeEventHandler(event) {
   let selected = event.target.value;
   selection = selected.toLowerCase().replace(/ /g,'');
   imageDump.innerHTML = '';
-  whatIsTheSelection(selection);
   getWeatherData(selection);
   getInstagramImages(selection);
 };
@@ -33,31 +32,21 @@ function getInstagramImages(string) {
   fetch(url)
     .then(res => res.json())
     .then(buildEls)
+    .catch()
 };
 
-/////////////////////////////////////////
-
-//Functions for sorting through the API
-// getWeatherData();
-
 function getWeatherData(selection) {
-  console.log("getWeatherData", selection);
   let snowUrl = 'https://skiapp.onthesnow.com/app/widgets/resortlist?region=us&regionids=251&language=en&pagetype=skireport&direction=+1'
   fetch(snowUrl)
-    .then(res => res.json())
-    .then(sortWeather)
-    // .then(buildWeather)
-    .catch()
-}
+  .then(res => res.json())
+  .then(sortWeather)
+  .catch()
+};
 
 function sortWeather(res) {
-  var weatherContainer = document.querySelector('.weather');
-  peek(res);
-  let ary = res.rows;
-  let resort = ary.filter((row) => {
-    return row['resort_name'].toLowerCase().replace(/ /g,'') == resortChosen
+  let resort = res.rows.filter((row) => {
+    return row['resort_name'].toLowerCase().replace(/ /g,'') == selection
   });
-
   for (var i = 0; i < resort.length; i++) {
     superObj.resortName = resort[i].resort_name;
     superObj.threeDayTotal = Math.round(resort[i].pastSnow.sum3/2.54);
@@ -66,54 +55,36 @@ function sortWeather(res) {
     superObj.liftTotal = resort[i].resortProfile.num_lifts;
     superObj.baseDepth = Math.round(resort[i].snowcone.base_depth_cm/2.54);
     superObj.topDepth = Math.round(resort[i].snowcone.top_depth_cm/2.54);
-    console.log(superObj);
-    weatherContainer.innerHTML =
-    `<h2>${superObj.resortName}</h2>
-      <div class="weather-flex">
-        <ul> <h3>Snowfall</h3>
-          <li> 24 Hrs: ${superObj.lastDayTotal}"<li>
-          <li> 72 Hrs: ${superObj.threeDayTotal}"</li>
-        </ul>
-        <ul> <h3>Lower/Upper</h3>
-          <li> ${superObj.baseDepth}" - ${superObj.topDepth}" </li>
-        </ul>
-        <ul> <h3>Lifts</h3>
-          <li> Open: ${superObj.liftNum} / ${superObj.liftTotal} </li>
-        </ul>
-      </div>`;
-    //build HTML function
-  }
-}
+    buildWeather(superObj);
+  };
+};
 
-function buildWeather(resortName, ) {
+function buildWeather(superObj) {
+  var weatherContainer = document.querySelector('.weather');
+  weatherContainer.innerHTML =
+  `<h2>${superObj.resortName}</h2>
+    <div class="weather-flex">
+      <ul> <h3>Snowfall</h3>
+        <li> 24 Hrs: ${superObj.lastDayTotal}"<li>
+        <li> 72 Hrs: ${superObj.threeDayTotal}"</li>
+      </ul>
+      <ul> <h3>Lower/Upper</h3>
+        <li> ${superObj.baseDepth}" - ${superObj.topDepth}" </li>
+      </ul>
+      <ul> <h3>Lifts</h3>
+        <li> Open: ${superObj.liftNum} / ${superObj.liftTotal} </li>
+      </ul>
+    </div>`;
+};
 
-}
-
-function whatIsTheSelection(selection) {
-  console.log(selection);
-  resortChosen = selection;
-}
-
-function peek(res) {
-  console.log(res.rows, "res");
-  // console.log(selection);
-  //builds a loop that prints out all the resort names
-  for (var i = 0; i < res.rows.length; i++) {
-    let resort = res.rows[i].resort_name_short.toLowerCase().replace(/ /g,'');
-    console.log(resort);
-  }
-  // stretch: map/filter or FOR IN to make new obj of what I care about/reduce
-}
 
 function buildEls(res) {
-  // var slider = $(".carousel");
-  // slider.carousel();
   const toNodeKey = res.graphql.hashtag.edge_hashtag_to_media.edges;
   const container2 = document.querySelector('#container-list');
+  let count = 0;
   let hashArray = ["#one!", "#two!", "#three!",
                    "#four!", "#five!", "#six!",
                    "#seven!", "#eight!", "#nine!"];
-  let count = 0;
   loopThrough(toNodeKey, container2, hashArray, count);
   sliderClassCheck();
 };
@@ -133,13 +104,9 @@ function loopThrough(toNodeKey, container2, hashArray, count) {
 };
 
 function sliderClassCheck() {
-  // var slider = $(".carousel");
   var slider = $('.slider');
   if (slider.hasClass('initialized')) {
       slider.removeClass('initialized');
   }
   slider.slider();
-  slider.slider({
-      indicators: "false"
-  });
 };

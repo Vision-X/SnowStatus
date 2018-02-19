@@ -8,13 +8,12 @@
 
 body {
   background-color: #00243D;
-  max-height: 50vh;
   font-family: 'Exo 2', sans-serif;
 }
 
 header {
   background-color: black;
-  height: 15vh;
+  height: 20vh;
   width: 100%;
 }
 
@@ -37,21 +36,36 @@ h1, p {
   text-align: center;
 }
 
-/*nav {
+header a.modal-trigger {
   background-color: gray;
-  display: flex;
-  height: auto;
-  justify-content: space-around;
-  line-height: 0;
-}*/
+  border-radius: 2rem;
+  bottom: 80%;
+  left: 46vw;
+  margin-top: .8rem;
+  position: sticky;
+  z-index: 0 !important;
+}
+
+header a.modal-trigger:hover {
+  background-color: #00A938;
+}
+
+#modal1 {
+  background-color: #00243D;
+  width: 40%;
+}
+
+#modal1 h4 {
+  color: white;
+  font-family: 'Audiowide', cursive;
+  text-align: center;
+}
 
 ul h3 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 ul.dropdown-content {
-  /*background-color: #2A2A2A;*/
-  /*background-color: white;*/
   background-color: gray;
 }
 
@@ -59,45 +73,9 @@ li {
   padding: .1rem !important;
 }
 
-/*img {
-  max-height: 400px;
-  max-width: auto;
-}*/
-
-.slider {
-  /*height: 350px !important;*/
-  width: 100%;
-  /*margin-bottom: 6rem;*/
-}
-
-.slider .slides {
-  background-color: transparent;
-  margin: 0;
-  height: 400px;
-}
-
-.slider .slides li img {
-  max-height: 400px
-  /*max-width: 80%;*/
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.slider .indicators .indicator-item {
-  background-color: gray;
-  padding: 2rem 0;
-  height: 10px;
-  width: 10px;
-}
-
-/*.slider .slides li.active .indicators .indicator-item{
-  background-color: green;
-}*/
-
 .weather {
-  height: 25vh;
-  width: 50%;
+  max-height: 25vh;
+  width: 60%;
 }
 
 .weather h2 {
@@ -109,20 +87,7 @@ li {
 
 /*MATERIALIZE OVERRIDES HERE*/
 
-ul.dropdown-content.select-dropdown li span {
-  /*background-color: #00A938;*/
-  background-color: gray;
-  color: #2A2A2A;
-}
-
-.weather-flex {
-  color: #717171;
-  display: flex;
-  text-align: center;
-}
-
 .input-field {
-  /*background-color: #00A938;*/
   background-color: gray;
   margin: auto;
   margin-top: 2rem;
@@ -134,30 +99,74 @@ ul.dropdown-content.select-dropdown li span {
   border-bottom: none !important;
 }
 
+.slider {
+  width: 100%;
+}
 
-    /*==========  Non-Mobile First Method  ==========*/
+.slider .slides {
+  background-color: transparent;
+  height: 400px;
+  margin: 0;
+}
 
-    /* Large Devices, Wide Screens */
-    @media only screen and (max-width : 1200px) {
+.slider .slides li img {
+  max-height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
-    }
+.slider .indicators .indicator-item {
+  background-color: gray;
+  padding: 2rem 0;
+  height: 10px;
+  width: 10px;
+}
 
-    /* Medium Devices, Desktops */
-    @media only screen and (max-width : 992px) {
+ul.dropdown-content.select-dropdown li span {
+  background-color: gray;
+  color: #2A2A2A;
+}
+
+.weather-flex {
+  color: #717171;
+  display: flex;
+  text-align: center;
+  width: 50%;
+}
+
+
+/*==========  Non-Mobile First Media Queries ==========*/
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (max-width : 1200px) {
+
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (max-width : 992px) {
       :root {
         font-size: 1.0rem;
+      }
+
+      #modal1 {
+        width: 60%;
       }
     }
 
     /* Small Devices, Tablets */
-    @media only screen and (max-width : 768px) {
+  @media only screen and (max-width : 768px) {
 
       :root {
         font-size: .9rem;
       }
 
       header {
-        height: 15vh;
+        height: 20vh;
+      }
+
+      header a.modal-trigger {
+        left: 42vw;
       }
 
       .weather {
@@ -166,7 +175,7 @@ ul.dropdown-content.select-dropdown li span {
     }
 
     /* Extra Small Devices, Phones */
-    @media only screen and (max-width : 480px) {
+  @media only screen and (max-width : 480px) {
 
       :root {
          font-size: .8rem;
@@ -178,11 +187,17 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        header {
-         height: 30%;
+         height: 15vh;
        }
 
-       header h1 {
-         /*font-size: 3rem !important;*/
+       header a.modal-trigger {
+         bottom: 85vh;
+         left: 40vw;
+         margin-top: .4rem;
+       }
+
+       #modal1 {
+         width: 80%;
        }
 
        .weather-flex {
@@ -190,7 +205,6 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        .weather h2 {
-         margin: 0;
          width: 100%;
        }
 
@@ -203,27 +217,15 @@ ul.dropdown-content.select-dropdown li span {
          font-size: 22px;
        }
 
-       /*#container-list {
-         height: 320px !important;
-       }*/
-
-       .weather {
-         height: 30%;
-       }
-
        .weather-flex {
          width: 100%;
        }
     }
 
     /* Custom, iPhone Retina */
-    @media only screen and (max-width : 380px) {
+  @media only screen and (max-width : 380px) {
       :root {
-        font-size: 0.6rem;
-      }
-
-      header {
-        height: 10vh;
+        font-size: .7rem;
       }
 
       .select-wrapper input.select-dropdown {
