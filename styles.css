@@ -36,14 +36,29 @@ h1, p {
   text-align: center;
 }
 
+.flex-select {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+.btn,
+.btn-large,
+.btn-flat {
+  padding: 0 1rem;
+}
+
 main a.modal-trigger {
+  /*align-self: center;*/
   background-color: gray;
   border-radius: 2rem;
   /*bottom: 80%;*/
-  top: 0;
-  left: 45%;
-  margin-top: .8rem;
-  position: relative;
+  /*top: 0;
+  left: 45%;*/
+  margin-top: 2rem;
+  margin-left: 1rem !important;
+  /*position: relative;*/
   z-index: 0 !important;
 }
 
@@ -56,7 +71,8 @@ main a.modal-trigger:hover {
   width: 40%;
 }
 
-#modal1 h4 {
+#modal1 h4,
+#modal1 p {
   color: white;
   font-family: 'Audiowide', cursive;
   text-align: center;
@@ -89,15 +105,18 @@ li {
 /*MATERIALIZE OVERRIDES HERE*/
 
 .input-field {
+  align-self: center;
   background-color: gray;
-  margin: auto;
-  margin-top: 2rem;
+  display: inline-block;
+  /*margin: auto;*/
+  margin: 2rem 0 0 10%;
   padding: 0 1rem;
-  width: 40vh;
+  width: 70%;
 }
 
 .select-wrapper input.select-dropdown {
   border-bottom: none !important;
+  margin: 0;
 }
 
 .slider {
@@ -165,7 +184,7 @@ ul.dropdown-content.select-dropdown li span {
       }
 
       header {
-        height: 20vh;
+        height: 15vh;
       }
 
       main a.modal-trigger {
@@ -185,12 +204,12 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        body {
-         height: 100vh;
+         max-height: 100vh;
          width: 100vw;
        }
 
        header {
-         height: 12rem;
+         height: 10rem;
        }
 
        header p {
@@ -198,13 +217,21 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        main a.modal-trigger {
-         bottom: 85vh;
-         /*left: 40vw;*/
-         margin-top: .4rem;
+         margin-top: 1rem;
        }
 
        #modal1 {
          width: 80%;
+       }
+
+       .flex-select {
+         width: 100%;
+       }
+
+       .input-field {
+         width: 80%;
+         margin-left: 1rem;
+         margin-bottom: 1rem;
        }
 
        .weather-flex {
@@ -237,6 +264,6 @@ ul.dropdown-content.select-dropdown li span {
 
       .select-wrapper input.select-dropdown {
         font-size: 18px;
-        width: 95vw;
+        /*width: 95vw;*/
       }
     }
