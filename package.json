@@ -1,0 +1,24 @@
+{
+  "name": "P2-SnowStatus",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vision-X/SnowStatus.Colorado.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vision-X/SnowStatus.Colorado/issues"
+  },
+  "homepage": "https://github.com/Vision-X/SnowStatus.Colorado#readme",
+  "devDependencies": {
+    "cypress": "^2.0.1"
+  },
+  "dependencies": {},
+  "description": ""
+}

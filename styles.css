@@ -36,17 +36,18 @@ h1, p {
   text-align: center;
 }
 
-header a.modal-trigger {
+main a.modal-trigger {
   background-color: gray;
   border-radius: 2rem;
-  bottom: 80%;
-  left: 46vw;
+  /*bottom: 80%;*/
+  top: 0;
+  left: 45%;
   margin-top: .8rem;
-  position: sticky;
+  position: relative;
   z-index: 0 !important;
 }
 
-header a.modal-trigger:hover {
+main a.modal-trigger:hover {
   background-color: #00A938;
 }
 
@@ -132,7 +133,9 @@ ul.dropdown-content.select-dropdown li span {
   color: #717171;
   display: flex;
   text-align: center;
-  width: 50%;
+  justify-content: space-between;
+  /*width: 50%;*/
+  /*max-width: 80%;*/
 }
 
 
@@ -165,8 +168,8 @@ ul.dropdown-content.select-dropdown li span {
         height: 20vh;
       }
 
-      header a.modal-trigger {
-        left: 42vw;
+      main a.modal-trigger {
+        /*left: 42vw;*/
       }
 
       .weather {
@@ -187,12 +190,16 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        header {
-         height: 15vh;
+         height: 12rem;
        }
 
-       header a.modal-trigger {
+       header p {
+         font-size: 14px;
+       }
+
+       main a.modal-trigger {
          bottom: 85vh;
-         left: 40vw;
+         /*left: 40vw;*/
          margin-top: .4rem;
        }
 
@@ -229,6 +236,7 @@ ul.dropdown-content.select-dropdown li span {
       }
 
       .select-wrapper input.select-dropdown {
+        font-size: 18px;
         width: 95vw;
       }
     }

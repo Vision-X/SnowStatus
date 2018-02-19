@@ -6,7 +6,7 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('select').onchange=changeEventHandler;
+  document.querySelector('select').onchange=changeEventHandler
 }, false);
 
 var selection = '';
@@ -59,7 +59,7 @@ function sortWeather(res) {
   };
 };
 
-function buildWeather(superObj) {
+function buildWeather() {
   var weatherContainer = document.querySelector('.weather');
   weatherContainer.innerHTML =
   `<h2>${superObj.resortName}</h2>
