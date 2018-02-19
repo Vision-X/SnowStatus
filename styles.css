@@ -13,7 +13,7 @@ body {
 
 header {
   background-color: black;
-  height: 20vh;
+  height: 15vh;
   width: 100%;
 }
 
@@ -24,6 +24,7 @@ h1 {
 
 header p {
   color: #717171;
+  font-size: 1.2rem;
 }
 
 #header-style {
@@ -40,6 +41,7 @@ h1, p {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin: 0 25%;
   width: 70%;
 }
 
@@ -53,12 +55,8 @@ main a.modal-trigger {
   /*align-self: center;*/
   background-color: gray;
   border-radius: 2rem;
-  /*bottom: 80%;*/
-  /*top: 0;
-  left: 45%;*/
   margin-top: 2rem;
   margin-left: 1rem !important;
-  /*position: relative;*/
   z-index: 0 !important;
 }
 
@@ -68,7 +66,7 @@ main a.modal-trigger:hover {
 
 #modal1 {
   background-color: #00243D;
-  width: 40%;
+  max-width: 80%;
 }
 
 #modal1 h4,
@@ -76,10 +74,6 @@ main a.modal-trigger:hover {
   color: white;
   font-family: 'Audiowide', cursive;
   text-align: center;
-}
-
-ul h3 {
-  font-size: 1.4rem;
 }
 
 ul.dropdown-content {
@@ -90,16 +84,29 @@ li {
   padding: .1rem !important;
 }
 
+.weather-flex {
+  color: #717171;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
 .weather {
   max-height: 25vh;
-  width: 60%;
+  width: 40%;
 }
 
 .weather h2 {
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin: 0;
   text-align: center;
+}
+
+.weather h3 {
+  font-size: 1.4rem;
+  margin: .6rem .2rem;
+  border-bottom: solid #00A938 1px;
 }
 
 /*MATERIALIZE OVERRIDES HERE*/
@@ -108,10 +115,9 @@ li {
   align-self: center;
   background-color: gray;
   display: inline-block;
-  /*margin: auto;*/
   margin: 2rem 0 0 10%;
   padding: 0 1rem;
-  width: 70%;
+  width: 50%;
 }
 
 .select-wrapper input.select-dropdown {
@@ -126,7 +132,7 @@ li {
 .slider .slides {
   background-color: transparent;
   height: 400px;
-  margin: 0;
+  margin: 1rem 0 0 0;
 }
 
 .slider .slides li img {
@@ -143,19 +149,16 @@ li {
   width: 10px;
 }
 
+.indicator-item:active {
+  color: pink;
+  background-color: pink !important;
+}
+
 ul.dropdown-content.select-dropdown li span {
   background-color: gray;
   color: #2A2A2A;
 }
 
-.weather-flex {
-  color: #717171;
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-  /*width: 50%;*/
-  /*max-width: 80%;*/
-}
 
 
 /*==========  Non-Mobile First Media Queries ==========*/
@@ -183,13 +186,10 @@ ul.dropdown-content.select-dropdown li span {
         font-size: .9rem;
       }
 
-      header {
-        height: 15vh;
-      }
-
-      main a.modal-trigger {
-        /*left: 42vw;*/
-      }
+      /*.flex-select {
+        margin: 0 10%;
+        width: 90%;
+      }*/
 
       .weather {
         width: 90%;
@@ -221,38 +221,29 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        #modal1 {
+         font-size: 1.5rem;
          width: 80%;
        }
 
        .flex-select {
-         width: 100%;
+         margin: 0 5%;
+         width: 90%;
        }
 
        .input-field {
-         width: 80%;
-         margin-left: 1rem;
          margin-bottom: 1rem;
+         width: 80%;
        }
 
-       .weather-flex {
-         width: 75%;
-       }
-
-       .weather h2 {
+       .weather-flex,
+       .weather-flex h2 {
          width: 100%;
        }
 
        .dropdown-content li>a,
-       .dropdown-content li>span {
-         font-size: 22px;
-       }
-
+       .dropdown-content li>span,
        .select-wrapper input.select-dropdown {
          font-size: 22px;
-       }
-
-       .weather-flex {
-         width: 100%;
        }
     }
 
