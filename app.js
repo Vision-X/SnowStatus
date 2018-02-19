@@ -68,7 +68,7 @@ function buildWeather() {
         <li> 24 Hrs: ${superObj.lastDayTotal}"<li>
         <li> 72 Hrs: ${superObj.threeDayTotal}"</li>
       </ul>
-      <ul> <h3>Lower/Upper</h3>
+      <ul> <h3>Base/Top</h3>
         <li> ${superObj.baseDepth}" - ${superObj.topDepth}" </li>
       </ul>
       <ul> <h3>Lifts</h3>
