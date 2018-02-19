@@ -1,7 +1,8 @@
 $(document).ready(function() {
     $('select').material_select();
     $('#container-list').css("display", "none");
-    $('.carousel.carousel-slider').carousel({fullWidth: true});
+    // $('.carousel.carousel-slider').carousel({fullWidth: true});
+    $('.slider').slider();
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -105,8 +106,8 @@ function peek(res) {
 }
 
 function buildEls(res) {
-  var slider = $(".carousel");
-  slider.carousel();
+  // var slider = $(".carousel");
+  // slider.carousel();
   const toNodeKey = res.graphql.hashtag.edge_hashtag_to_media.edges;
   const container2 = document.querySelector('#container-list');
   let hashArray = ["#one!", "#two!", "#three!",
@@ -123,19 +124,22 @@ function loopThrough(toNodeKey, container2, hashArray, count) {
       let topImage = toNodeKey[i].node.display_url;
       superObj.urls.push(topImage);
       container2.innerHTML +=
-      `<a class="carousel-item" href="${hashArray[count]}">
-      <img src="${topImage}"></a>`;
+      `<li href="${hashArray[count]}">
+        <img class="responsive-img" src="${topImage}">
+      </li>`;
       count++;
   };
+  $('.slider').slider();
 };
 
 function sliderClassCheck() {
-  var slider = $(".carousel");
+  // var slider = $(".carousel");
+  var slider = $('.slider');
   if (slider.hasClass('initialized')) {
       slider.removeClass('initialized');
   }
-  slider.carousel({
-      autoplay: true
+  slider.slider();
+  slider.slider({
+      indicators: "false"
   });
-  $('.carousel.carousel-slider').carousel({fullWidth: true});
 };

@@ -14,7 +14,7 @@ body {
 
 header {
   background-color: black;
-  height: 20%;
+  height: 15vh;
   width: 100%;
 }
 
@@ -59,13 +59,51 @@ li {
   padding: .1rem !important;
 }
 
+/*img {
+  max-height: 400px;
+  max-width: auto;
+}*/
+
+.slider {
+  /*height: 350px !important;*/
+  width: 100%;
+  /*margin-bottom: 6rem;*/
+}
+
+.slider .slides {
+  background-color: transparent;
+  margin: 0;
+  height: 400px;
+}
+
+.slider .slides li img {
+  max-height: 400px
+  /*max-width: 80%;*/
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.slider .indicators .indicator-item {
+  background-color: gray;
+  padding: 2rem 0;
+  height: 10px;
+  width: 10px;
+}
+
+/*.slider .slides li.active .indicators .indicator-item{
+  background-color: green;
+}*/
+
 .weather {
   height: 25vh;
+  width: 50%;
 }
 
 .weather h2 {
   color: white;
   font-size: 3rem;
+  margin: 0;
   text-align: center;
 }
 
@@ -81,22 +119,6 @@ ul.dropdown-content.select-dropdown li span {
   color: #717171;
   display: flex;
   text-align: center;
-  width: 50%;
-}
-
-.carousel {
-  height: 400px !important;
-  perspective: 800px !important;
-}
-
-/*.carousel-slider {
-  width: 100% !important;
-  max-height: 60vh !important;
-}*/
-
-.carousel .carousel-item {
-  max-height: 60vh !important;
-  width: 33.3333% !important;
 }
 
 .input-field {
@@ -111,87 +133,6 @@ ul.dropdown-content.select-dropdown li span {
 .select-wrapper input.select-dropdown {
   border-bottom: none !important;
 }
-
-/*.carousel-item .active {
-  transform: translateX(479.672px)
-             translateY(50px)
-             translateX(0px)
-             translateX(0px)
-             translateZ(0px)
-             !important;
-}
-.carousel-item {
-    opacity:1;
-}
- .carousel-item.active.right, .carousel-item.next {
-  left: 0;
-	-webkit-transition: opacity 0.7s ease-in-out;
-	-moz-transition: opacity 0.7s ease-in-out;
-	-ms-transition: opacity 0.7s ease-in-out;
-	-o-transition: opacity 0.7s ease-in-out;
-   transition: opacity 0.7s ease-in-out;
-	 opacity:0;
-   transform: translate3d(0, 0, 0);
-}
-.carousel-item.active.left, .carousel-item.prev {
-  left: 0;
-	-webkit-transition: opacity 0.7s ease-in-out;
-	-moz-transition: opacity 0.7s ease-in-out;
-	-ms-transition: opacity 0.7s ease-in-out;
-	-o-transition: opacity 0.7s ease-in-out;
-  transition: opacity 0.7s ease-in-out;
-	opacity:0;
-  transform: translate3d(0, 0, 0);
-}
-.carousel-item.active, .carousel-item.next.left,  .carousel-item.prev.right {
-    left: 0;
-   	opacity:1;
-}*/
-
-
-/*@media only screen and (max-width: 965px) {
-  :root {
-    font-size: 1.2rem;
-  }
-}*/
-
-/*@media only screen and (max-width: 560px) {
-
- :root {
-    font-size: 1rem;
-  }
-
-  body {
-    height: 100vh;
-    width: 100vw;
-  }
-
-  header {
-    height: 25%;
-  }
-
-  h2 {
-    font-size: 2.0rem;
-  }
-
-  .dropdown-content li>a,
-  .dropdown-content li>span {
-    font-size: 24px !important;
-    line-height: 1.5rem !important;
-  }
-
-  .input-field select option {
-    font-size: 22px;
-  }
-
-  .weather {
-    height: 30%;
-  }
-
-  .weather-flex {
-    width: 80%;
-  }
-}*/
 
 
     /*==========  Non-Mobile First Method  ==========*/
@@ -214,6 +155,14 @@ ul.dropdown-content.select-dropdown li span {
       :root {
         font-size: .9rem;
       }
+
+      header {
+        height: 15vh;
+      }
+
+      .weather {
+        width: 90%;
+      }
     }
 
     /* Extra Small Devices, Phones */
@@ -233,12 +182,16 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        header h1 {
-         font-size: 3rem !important;
+         /*font-size: 3rem !important;*/
+       }
+
+       .weather-flex {
+         width: 75%;
        }
 
        .weather h2 {
-         font-size: 1.4rem;
          margin: 0;
+         width: 100%;
        }
 
        .dropdown-content li>a,
@@ -250,34 +203,30 @@ ul.dropdown-content.select-dropdown li span {
          font-size: 22px;
        }
 
-       #container-list {
+       /*#container-list {
          height: 320px !important;
-       }
-
-       .carousel-item.active img {
-         transform: translateX(-10px) translateY(-10px)
-                    translateX(0px)
-                    translateX(0px)
-                    translateZ(300px)
-                    !important;
-       }
-
-       .carousel .carousel-item>img {
-         width: 150%;
-       }
+       }*/
 
        .weather {
          height: 30%;
        }
 
        .weather-flex {
-         width: 90%;
+         width: 100%;
        }
     }
 
     /* Custom, iPhone Retina */
-    @media only screen and (max-width : 320px) {
-      h1 {
-        font-size: 3rem;
+    @media only screen and (max-width : 380px) {
+      :root {
+        font-size: 0.6rem;
+      }
+
+      header {
+        height: 10vh;
+      }
+
+      .select-wrapper input.select-dropdown {
+        width: 95vw;
       }
     }
