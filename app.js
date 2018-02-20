@@ -5,12 +5,13 @@ $(document).ready(function() {
     $('.slider').slider();
 });
 
+var selection = '';
+var superObj = {};
+
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('select').onchange=changeEventHandler
 }, false);
 
-var selection = '';
-var superObj = {};
 
 function changeEventHandler(event) {
   event.preventDefault();
