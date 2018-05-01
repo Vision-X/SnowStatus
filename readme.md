@@ -36,3 +36,4 @@ Michael Marlow (https://github.com/Vision-X)
 - Materialize
 - Node.js
 - Instagram API
+- Cheerio.js (webscraper for weather data)
