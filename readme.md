@@ -1,9 +1,5 @@
 # SnowStatus
 
-## Note!
-
-As of 6/01/2018, the open access to instagram urls in JSON format has been removed for privacy concerns (Facebook!), so the images currently will not load. An issue is open to correct this before the next winter season begins. 
-
 ## Deployed Site
 
 [https://snowstatus-colorado.firebaseapp.com/](https://snowstatus-colorado.firebaseapp.com/)
