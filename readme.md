@@ -2,11 +2,11 @@
 
 ## Deployed Site
 
-[https://snowstatus-colorado.firebaseapp.com/](#)
+[https://snowstatus-colorado.firebaseapp.com/](https://snowstatus-colorado.firebaseapp.com/)
 
 ## Demo
 
-![Demo!!!](https://media.giphy.com/media/MRq9WpUcTerRDBAsJs/giphy.gif)
+<img src="https://media.giphy.com/media/MRq9WpUcTerRDBAsJs/giphy.gif" data-canonical-src="https://media.giphy.com/media/MRq9WpUcTerRDBAsJs/giphy.gif" width="120%" />
 
 ## Description
 
@@ -36,3 +36,4 @@ Michael Marlow (https://github.com/Vision-X)
 - Materialize
 - Node.js
 - Instagram API
+- Cheerio.js (webscraper for weather data)
