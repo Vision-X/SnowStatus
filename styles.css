@@ -1,5 +1,5 @@
 :root {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 * {
@@ -13,13 +13,14 @@ body {
 
 header {
   background-color: black;
-  height: 15vh;
+  height: 10vh;
   width: 100%;
 }
 
 h1 {
   color: #00A938;
   font-family: 'Audiowide', cursive;
+  font-size: 3rem;
 }
 
 header p {
@@ -171,7 +172,7 @@ ul.dropdown-content.select-dropdown li span {
   /* Medium Devices, Desktops */
   @media only screen and (max-width : 992px) {
       :root {
-        font-size: 1.0rem;
+        /* font-size: 1.0rem; */
       }
 
       #modal1 {
@@ -183,7 +184,7 @@ ul.dropdown-content.select-dropdown li span {
   @media only screen and (max-width : 768px) {
 
       :root {
-        font-size: .9rem;
+        font-size: .7rem;
       }
 
       .weather {
@@ -195,7 +196,7 @@ ul.dropdown-content.select-dropdown li span {
   @media only screen and (max-width : 480px) {
 
       :root {
-         font-size: .8rem;
+         /* font-size: 0.8rem; */
        }
 
        body {
@@ -204,7 +205,7 @@ ul.dropdown-content.select-dropdown li span {
        }
 
        header {
-         height: 10rem;
+         height: 8rem;
        }
 
        header p {
@@ -249,6 +250,6 @@ ul.dropdown-content.select-dropdown li span {
       }
 
       .select-wrapper input.select-dropdown {
-        font-size: 18px;        
+        font-size: 18px;
       }
     }

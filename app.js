@@ -52,7 +52,7 @@ function sortWeather(res) {
     superObj.resortName = resort[i].resort_name;
     superObj.threeDayTotal = Math.round(resort[i].pastSnow.sum3/2.54);
     superObj.lastDayTotal = Math.round(resort[i].pastSnow.snow0day/2.54);
-    superObj.liftNum = resort[i].snowcone.lifts_open;
+    superObj.liftNum = (resort[i].snowcone.lifts_open == null) ? 0 : resort[i].snowcone.lifts_open;
     superObj.liftTotal = resort[i].resortProfile.num_lifts;
     superObj.baseDepth = Math.round(resort[i].snowcone.base_depth_cm/2.54);
     superObj.topDepth = Math.round(resort[i].snowcone.top_depth_cm/2.54);
